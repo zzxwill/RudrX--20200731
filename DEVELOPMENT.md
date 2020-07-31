@@ -9,6 +9,7 @@ contributing to `RudrX` or build a PoC (Proof of Concept).
 2. Kubernetes version v1.15+ with `~/.kube/config` configured.
 3. OAM Kubernetes Runtime installed.
 4. Kustomize version 3.8+
+5. ginkgo 1.14.0+ (just for [E2E test](https://github.com/cloud-native-application/RudrX/blob/master/DEVELOPMENT.md#e2e-test))
 
 ## Build
 * Clone this project
@@ -64,11 +65,13 @@ workloaddefinition.core.oam.dev/deployments.apps                      deployment
 workloaddefinition.core.oam.dev/statefulsets.apps                     statefulsets.apps
 ```
 
-## Test
+## E2E test
 ```
-$ go test ./pkg/test
-ok  	github.com/cloud-native-application/rudrx/pkg/test	14.662s
+$ cd pkg/test
+$ ginkgo -v -r
 ```
+![](./e2e-sample.jpg)
+
 
 ## Make a pull request
 Remember to write unit-test and e2e test before making a pull request.
